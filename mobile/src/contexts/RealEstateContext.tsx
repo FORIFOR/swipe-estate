@@ -164,14 +164,20 @@ export const RealEstateProvider: React.FC<{ children: React.ReactNode }> = ({ ch
       
       const isCurrentlyFavorite = isFavorite(id);
       const newFavoriteState = !isCurrentlyFavorite;
-      
-      console.log(`物件ID ${id} を ${newFavoriteState ? 'お気に入り' : 'お気に入り解除'} - ユーザーID: ${user.id}`);
-      
+
+      console.log(
+        `物件ID ${id} を ${newFavoriteState ? 'お気に入り' : 'お気に入り解除'} - ユーザーID: ${user.id}`
+      );
+
       // APIコールを行わず、メモリ上でのみお気に入り登録する（RLS問題を回避）
       try {
-        // メモリ上のお気に入りリストに追加
         const property = properties.find(p => p.id === id);
-        if (property && !favoriteProperties.some(p => p.id === id)) {
+        if (!property) return;
+
+        if (isCurrentlyFavorite) {
+          console.log(`物件ID ${id} をメモリ上のお気に入りリストから削除`);
+          setFavoriteProperties(favoriteProperties.filter(p => p.id !== id));
+        } else if (!favoriteProperties.some(p => p.id === id)) {
           console.log(`物件ID ${id} をメモリ上のお気に入りリストに追加`);
           setFavoriteProperties([...favoriteProperties, property]);
         }
@@ -179,17 +185,27 @@ export const RealEstateProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         // 開発環境では、実際のDBコールを行わないようにする
         if (process.env.NODE_ENV === 'production') {
           // 本番環境でのみ実行
-          const { error } = await supabase
-            .from('favorites')
-            .upsert(
-              {
-                user_id: user.id,
-                property_id: id,
-                created_at: new Date().toISOString()
-              },
-              { onConflict: 'user_id,property_id' }
-            );
-          
+          let error;
+          if (newFavoriteState) {
+            const res = await supabase
+              .from('favorites')
+              .upsert(
+                {
+                  user_id: user.id,
+                  property_id: id,
+                  created_at: new Date().toISOString()
+                },
+                { onConflict: 'user_id,property_id' }
+              );
+            error = res.error;
+          } else {
+            const res = await supabase
+              .from('favorites')
+              .delete()
+              .match({ user_id: user.id, property_id: id });
+            error = res.error;
+          }
+
           if (error) {
             console.error('お気に入り処理エラー:', error);
             // エラーは表示しない
