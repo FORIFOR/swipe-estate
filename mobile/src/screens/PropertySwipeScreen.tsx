@@ -41,7 +41,16 @@ export default function PropertySwipeScreen() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [swipeCount, setSwipeCount] = useState(0);
+  const [showAd, setShowAd] = useState(false);
   const position = useRef(new Animated.ValueXY()).current;
+
+  useEffect(() => {
+    if (showAd) {
+      const timer = setTimeout(() => setShowAd(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [showAd]);
 
   // 検索パラメータから適切なAPIリクエストを実行
   useEffect(() => {
@@ -466,6 +475,9 @@ export default function PropertySwipeScreen() {
     }).start(() => {
       position.setValue({ x: 0, y: 0 });
       setCurrentIndex(prev => prev + 1);
+      const count = swipeCount + 1;
+      setSwipeCount(count);
+      if (count % 5 === 0) setShowAd(true);
     });
   };
 
@@ -483,6 +495,9 @@ export default function PropertySwipeScreen() {
     }).start(() => {
       position.setValue({ x: 0, y: 0 });
       setCurrentIndex(prev => prev + 1);
+      const count = swipeCount + 1;
+      setSwipeCount(count);
+      if (count % 5 === 0) setShowAd(true);
     });
   };
 
@@ -729,6 +744,18 @@ export default function PropertySwipeScreen() {
 
       {/* カスタム半円ボタンを表示 */}
       <SwipeButtons />
+
+      {showAd && (
+        <View style={styles.adOverlay}>
+          <Image
+            source={{ uri: 'https://via.placeholder.com/300x250?text=AD' }}
+            style={styles.adImage}
+          />
+          <TouchableOpacity style={styles.adClose} onPress={() => setShowAd(false)}>
+            <Text style={{ color: '#fff' }}>閉じる</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </SafeAreaView>
   );
 }
@@ -929,5 +956,27 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
     fontWeight: '600',
+  },
+  adOverlay: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 100,
+  },
+  adImage: {
+    width: 300,
+    height: 250,
+  },
+  adClose: {
+    marginTop: 15,
+    backgroundColor: '#000',
+    paddingVertical: 8,
+    paddingHorizontal: 20,
+    borderRadius: 20,
   },
 });
