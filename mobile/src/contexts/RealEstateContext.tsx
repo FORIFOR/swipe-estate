@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState, useRef, useCallback } from 'react';
 import RealEstateAPI, { PropertyData } from '../services/RealEstateAPI';
+import { searchProperties as searchLifull } from '../services/LifullHomesAPI';
 import { useAuth } from './AuthContext';
 import { supabase } from '../lib/supabase';
 import { Alert } from 'react-native';
@@ -51,8 +52,13 @@ export const RealEstateProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         // テストモードを無効化し、実際のAPIを使用
         window.FORCE_TEST_MODE = false;
         
-        // APIから物件情報を取得
-        const data = await RealEstateAPI.getProperties();
+        // LIFULL HOME'S API から物件情報を取得
+        let data = await searchLifull({ fulladdr: '東京都' });
+
+        // 取得できなかった場合は国交省APIをフォールバック
+        if (data.length === 0) {
+          data = await RealEstateAPI.getProperties();
+        }
         
         console.log(`物件情報を${data.length}件取得しました`);
         setProperties(data);
@@ -232,8 +238,13 @@ export const RealEstateProvider: React.FC<{ children: React.ReactNode }> = ({ ch
       // 満一つログを追加
       console.log('検索パラメータ確認（RealEstateContext）:', params);
       
-      // APIから物件情報を取得
-      const data = await RealEstateAPI.getProperties(params);
+      // LIFULL HOME'S APIから物件情報を取得
+      let data = await searchLifull({ fulladdr: params?.station || '東京都' });
+
+      // フォールバックとして国交省APIを利用
+      if (data.length === 0) {
+        data = await RealEstateAPI.getProperties(params);
+      }
       
       console.log(`物件情報を${data.length}件取得しました`);
       

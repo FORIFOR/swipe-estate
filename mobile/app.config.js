@@ -36,6 +36,7 @@ export default {
     extra: {
       supabaseUrl: process.env.EXPO_PUBLIC_SUPABASE_URL,
       supabaseAnonKey: process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY,
+      lifullToken: process.env.EXPO_PUBLIC_LIFULL_TOKEN,
     }
   }
 };
