@@ -1,0 +1,6 @@
+graph TD
+    source["ソース\nmobile/index.ts"]
+    n-expo-41f8b4["expo\n外部・別名・未解決"]
+    source -->|"字句抽出: import／export"| n-expo-41f8b4
+    n-app-4c727b["./App\nmobile/App.tsx"]
+    source -->|"字句抽出: import／export"| n-app-4c727b

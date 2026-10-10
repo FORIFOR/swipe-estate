@@ -1,0 +1,27 @@
+実在パス: `mobile/src`。27ファイル。
+
+- `mobile/src/components/PhoneAuth.tsx`
+- `mobile/src/components/PropertyCard.tsx`
+- `mobile/src/components/SwipeDeck.tsx`
+- `mobile/src/components/TestSwipe.tsx`
+- `mobile/src/contexts/AuthContext.tsx`
+- `mobile/src/contexts/FeedContext.tsx`
+- `mobile/src/contexts/RealEstateContext.tsx`
+- `mobile/src/global.d.ts`
+- `mobile/src/lib/supabase.ts`
+- `mobile/src/navigation/index.tsx`
+- `mobile/src/screens/AlertsScreen.js`
+- `mobile/src/screens/Home.tsx`
+- `mobile/src/screens/InsightsScreen.js`
+- `mobile/src/screens/LoginScreen.tsx`
+- `mobile/src/screens/MapScreen.js`
+- `mobile/src/screens/Profile.tsx`
+- `mobile/src/screens/PropertyDetailScreen.tsx`
+- `mobile/src/screens/PropertySearchScreen.tsx`
+- `mobile/src/screens/PropertySwipeScreen.tsx`
+- `mobile/src/screens/RealEstateScreen.tsx`
+- `mobile/src/screens/Saved.tsx`
+- `mobile/src/screens/Search.tsx`
+- `mobile/src/screens/TestAuth.tsx`
+- `mobile/src/services/LifullHomesAPI.ts`
+- `mobile/src/services/RealEstateAPI.ts`

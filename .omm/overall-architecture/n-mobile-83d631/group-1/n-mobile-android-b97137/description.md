@@ -1,0 +1,27 @@
+実在パス: `mobile/android`。35ファイル。
+
+- `mobile/android/.gitignore`
+- `mobile/android/app/build.gradle`
+- `mobile/android/app/debug.keystore`
+- `mobile/android/app/proguard-rules.pro`
+- `mobile/android/app/src/debug/AndroidManifest.xml`
+- `mobile/android/app/src/main/AndroidManifest.xml`
+- `mobile/android/app/src/main/java/com/mobile/MainActivity.kt`
+- `mobile/android/app/src/main/java/com/mobile/MainApplication.kt`
+- `mobile/android/app/src/main/res/drawable-hdpi/splashscreen_logo.png`
+- `mobile/android/app/src/main/res/drawable-mdpi/splashscreen_logo.png`
+- `mobile/android/app/src/main/res/drawable-xhdpi/splashscreen_logo.png`
+- `mobile/android/app/src/main/res/drawable-xxhdpi/splashscreen_logo.png`
+- `mobile/android/app/src/main/res/drawable-xxxhdpi/splashscreen_logo.png`
+- `mobile/android/app/src/main/res/drawable/ic_launcher_background.xml`
+- `mobile/android/app/src/main/res/drawable/rn_edit_text_material.xml`
+- `mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher.webp`
+- `mobile/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp`
+- `mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher.webp`
+- `mobile/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp`
+- `mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher.webp`
+- `mobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp`
+- `mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp`
+- `mobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp`
+- `mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp`
+- `mobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp`

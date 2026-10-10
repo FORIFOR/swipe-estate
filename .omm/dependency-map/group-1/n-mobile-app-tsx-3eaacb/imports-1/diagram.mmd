@@ -1,0 +1,18 @@
+graph TD
+    source["ソース\nmobile/App.tsx"]
+    n-react-6b810c["react\n外部・別名・未解決"]
+    source -->|"字句抽出: import／export"| n-react-6b810c
+    n-src-contexts-authcontext-487f2a["./src/contexts/AuthContext\nmobile/src/contexts/AuthContext.tsx"]
+    source -->|"字句抽出: import／export"| n-src-contexts-authcontext-487f2a
+    n-src-contexts-feedcontext-692859["./src/contexts/FeedContext\nmobile/src/contexts/FeedContext.tsx"]
+    source -->|"字句抽出: import／export"| n-src-contexts-feedcontext-692859
+    n-src-contexts-realestatecontext-1ff31d["./src/contexts/RealEstateContext\nmobile/src/contexts/RealEstateContext.tsx"]
+    source -->|"字句抽出: import／export"| n-src-contexts-realestatecontext-1ff31d
+    n-src-screens-loginscreen-4dc76c["./src/screens/LoginScreen\nmobile/src/screens/LoginScreen.tsx"]
+    source -->|"字句抽出: import／export"| n-src-screens-loginscreen-4dc76c
+    n-src-screens-testauth-080380["./src/screens/TestAuth\nmobile/src/screens/TestAuth.tsx"]
+    source -->|"字句抽出: import／export"| n-src-screens-testauth-080380
+    n-react-native-paper-1fb230["react-native-paper\n外部・別名・未解決"]
+    source -->|"字句抽出: import／export"| n-react-native-paper-1fb230
+    n-src-theme-9d2e0d["./src/theme\nmobile/src/theme/index.ts"]
+    source -->|"字句抽出: import／export"| n-src-theme-9d2e0d

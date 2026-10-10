@@ -1,0 +1,82 @@
+{
+  "repo": "FORIFOR/swipe-estate",
+  "branch": "main",
+  "tree_sha": "d45cb7cc5d2884d184833bc389f9920565c71584",
+  "tree_files": 100,
+  "read_files": [
+    {
+      "path": "README.md",
+      "sha": "9d4a024a0969bf78dabf584b26473c0e1c70206d"
+    },
+    {
+      "path": "mobile/package.json",
+      "sha": "9e9378c88d27baa7b7a22a5c9e67adc999bd7384"
+    },
+    {
+      "path": "mobile/index.ts",
+      "sha": "1d6e981ef6c4ea336e6fe8f3fbce9487221a075c"
+    },
+    {
+      "path": "mobile/src/navigation/index.tsx",
+      "sha": "d06d110297918a25e24cc8d18b1fda9760321bae"
+    },
+    {
+      "path": "mobile/src/theme/index.ts",
+      "sha": "34719eae9ddb19c98be543dbc88754b5542b49a7"
+    },
+    {
+      "path": "mobile/App.tsx",
+      "sha": "e783fc599cff2f8472947dcc6e71d9dd9f7c2f69"
+    },
+    {
+      "path": "mobile/src/screens/InsightsScreen.js",
+      "sha": "d00b7ea2501aeaac8a6b5b777038c19f788f61b5"
+    },
+    {
+      "path": "mobile/src/screens/MapScreen.js",
+      "sha": "569e3a578ebd22321c29cdc1f2b3c27f4197dc78"
+    },
+    {
+      "path": "mobile/src/screens/AlertsScreen.js",
+      "sha": "75121684782b19c8207cfbf7c0b90a2ad2458900"
+    },
+    {
+      "path": "mobile/src/screens/Home.tsx",
+      "sha": "7086fa15a96fd4f97b8a8714d4bb9185d190e600"
+    },
+    {
+      "path": "mobile/src/screens/Saved.tsx",
+      "sha": "26a18d08cf1bd8cc64606cf9a8afc916e3480ac6"
+    },
+    {
+      "path": "mobile/src/screens/Profile.tsx",
+      "sha": "413580aa521a031fefc82ff576778c7fa5fb46b9"
+    },
+    {
+      "path": "mobile/src/screens/PropertySearchScreen.tsx",
+      "sha": "a9ea140c4fd4ec5ec4d00d47e7902640b70f862c"
+    },
+    {
+      "path": "mobile/src/screens/PropertySwipeScreen.tsx",
+      "sha": "e94138c61f3e0046ea40cf8453c6f48d3aa458f9"
+    },
+    {
+      "path": "mobile/src/screens/PropertyDetailScreen.tsx",
+      "sha": "d89644a487df6156216d86cca32212260dfc368e"
+    },
+    {
+      "path": "mobile/src/contexts/AuthContext.tsx",
+      "sha": "32a6d68e31c765bb08622c5c6c3cead8e4aabd56"
+    },
+    {
+      "path": "mobile/src/contexts/FeedContext.tsx",
+      "sha": "fda86be750393c2feaa91f55efd2c0d2c36ed1bd"
+    },
+    {
+      "path": "mobile/src/contexts/RealEstateContext.tsx",
+      "sha": "718be4069f66d1f39f71053542f4138547a2384b"
+    }
+  ],
+  "not_read_count": 82,
+  "scope": "initial entry-point and direct-import analysis; not exhaustive semantic scan"
+}
